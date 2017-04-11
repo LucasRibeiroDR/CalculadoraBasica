@@ -28,8 +28,8 @@ public class CalculadoraBasicaTela extends javax.swing.JFrame {
         jOptionPane1 = new javax.swing.JOptionPane();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        CampoNumero2 = new javax.swing.JTextField();
-        CampoNumero1 = new javax.swing.JTextField();
+        CampoNumeroY = new javax.swing.JTextField();
+        CampoNumeroX = new javax.swing.JTextField();
         BotaoSomar = new javax.swing.JButton();
         BotaoSubtrair = new javax.swing.JButton();
         BotaoDividir = new javax.swing.JButton();
@@ -112,8 +112,8 @@ public class CalculadoraBasicaTela extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(CampoResultado, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
-                            .addComponent(CampoNumero2)
-                            .addComponent(CampoNumero1)))
+                            .addComponent(CampoNumeroY)
+                            .addComponent(CampoNumeroX)))
                     .addComponent(BotaoLimpar, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -130,15 +130,13 @@ public class CalculadoraBasicaTela extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(BotaoSomar)
-                    .addComponent(CampoNumero1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CampoNumeroX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel2)
-                        .addComponent(CampoNumero2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(BotaoSubtrair)))
+                    .addComponent(jLabel2)
+                    .addComponent(CampoNumeroY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotaoSubtrair))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BotaoDividir)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -158,8 +156,8 @@ public class CalculadoraBasicaTela extends javax.swing.JFrame {
 
     private void BotaoSomarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoSomarActionPerformed
         try{
-            calculadora.x = Float.parseFloat(CampoNumero1.getText());
-            calculadora.y = Float.parseFloat(CampoNumero2.getText());
+            calculadora.x = Float.parseFloat(CampoNumeroX.getText());
+            calculadora.y = Float.parseFloat(CampoNumeroY.getText());
             CampoResultado.setText(Float.toString(calculadora.somar()));
         }catch(NumberFormatException ex){
             JOptionPane.showMessageDialog(null, "Valores inválidos!" ,"Erro",JOptionPane.ERROR_MESSAGE);
@@ -169,8 +167,8 @@ public class CalculadoraBasicaTela extends javax.swing.JFrame {
 
     private void BotaoSubtrairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoSubtrairActionPerformed
         try{
-        calculadora.x = Float.parseFloat(CampoNumero1.getText());
-        calculadora.y = Float.parseFloat(CampoNumero2.getText());
+        calculadora.x = Float.parseFloat(CampoNumeroX.getText());
+        calculadora.y = Float.parseFloat(CampoNumeroY.getText());
         CampoResultado.setText(Float.toString(calculadora.subtrair()));
         }catch(NumberFormatException ex){
             JOptionPane.showMessageDialog(null, "Valores inválidos!" ,"Erro",JOptionPane.ERROR_MESSAGE);
@@ -179,11 +177,11 @@ public class CalculadoraBasicaTela extends javax.swing.JFrame {
 
     private void BotaoDividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoDividirActionPerformed
         try {
-            if(Float.parseFloat(CampoNumero2.getText())==0){
+            if(Float.parseFloat(CampoNumeroY.getText())==0){
                 JOptionPane.showMessageDialog(null, "Impossível dividir por zero!","Erro", JOptionPane.ERROR_MESSAGE);
             }else{
-                calculadora.x = Float.parseFloat(CampoNumero1.getText());
-                calculadora.y = Float.parseFloat(CampoNumero2.getText());
+                calculadora.x = Float.parseFloat(CampoNumeroX.getText());
+                calculadora.y = Float.parseFloat(CampoNumeroY.getText());
                 CampoResultado.setText(Float.toString(calculadora.dividir()));
             }
         }catch(NumberFormatException ex){
@@ -193,8 +191,8 @@ public class CalculadoraBasicaTela extends javax.swing.JFrame {
 
     private void BotaoMultiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoMultiplicarActionPerformed
         try{
-        calculadora.x = Float.parseFloat(CampoNumero1.getText());
-        calculadora.y = Float.parseFloat(CampoNumero2.getText());
+        calculadora.x = Float.parseFloat(CampoNumeroX.getText());
+        calculadora.y = Float.parseFloat(CampoNumeroY.getText());
         CampoResultado.setText(Float.toString(calculadora.multiplicar()));
         }catch(NumberFormatException ex){
             JOptionPane.showMessageDialog(null, "Valores inválidos!" ,"Erro",JOptionPane.ERROR_MESSAGE);
@@ -202,8 +200,8 @@ public class CalculadoraBasicaTela extends javax.swing.JFrame {
     }//GEN-LAST:event_BotaoMultiplicarActionPerformed
 
     private void BotaoLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoLimparActionPerformed
-        CampoNumero1.setText("");
-        CampoNumero2.setText("");
+        CampoNumeroX.setText("");
+        CampoNumeroY.setText("");
         CampoResultado.setText("");
     }//GEN-LAST:event_BotaoLimparActionPerformed
 
@@ -256,8 +254,8 @@ public class CalculadoraBasicaTela extends javax.swing.JFrame {
     private javax.swing.JButton BotaoMultiplicar;
     private javax.swing.JButton BotaoSomar;
     private javax.swing.JButton BotaoSubtrair;
-    private javax.swing.JTextField CampoNumero1;
-    private javax.swing.JTextField CampoNumero2;
+    private javax.swing.JTextField CampoNumeroX;
+    private javax.swing.JTextField CampoNumeroY;
     private javax.swing.JTextField CampoResultado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

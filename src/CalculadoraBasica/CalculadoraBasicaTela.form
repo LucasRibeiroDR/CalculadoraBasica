@@ -39,8 +39,8 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="CampoResultado" pref="109" max="32767" attributes="0"/>
-                          <Component id="CampoNumero2" alignment="0" max="32767" attributes="0"/>
-                          <Component id="CampoNumero1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="CampoNumeroY" alignment="0" max="32767" attributes="0"/>
+                          <Component id="CampoNumeroX" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Component id="BotaoLimpar" pref="188" max="32767" attributes="0"/>
@@ -63,13 +63,13 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="2" attributes="0">
                   <Component id="BotaoSomar" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="CampoNumero1" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="CampoNumeroX" alignment="2" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel1" alignment="2" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="CampoNumero2" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="CampoNumeroY" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="BotaoSubtrair" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -107,9 +107,9 @@
         <Property name="text" type="java.lang.String" value="Campo &quot;Y&quot;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="CampoNumero2">
+    <Component class="javax.swing.JTextField" name="CampoNumeroY">
     </Component>
-    <Component class="javax.swing.JTextField" name="CampoNumero1">
+    <Component class="javax.swing.JTextField" name="CampoNumeroX">
     </Component>
     <Component class="javax.swing.JButton" name="BotaoSomar">
       <Properties>
