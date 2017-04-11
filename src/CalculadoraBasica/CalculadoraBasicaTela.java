@@ -157,15 +157,24 @@ public class CalculadoraBasicaTela extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotaoSomarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoSomarActionPerformed
-        calculadora.x = Float.parseFloat(CampoNumero1.getText());
-        calculadora.y = Float.parseFloat(CampoNumero2.getText());
-        CampoResultado.setText(Float.toString(calculadora.somar()));     
+        try{
+            calculadora.x = Float.parseFloat(CampoNumero1.getText());
+            calculadora.y = Float.parseFloat(CampoNumero2.getText());
+            CampoResultado.setText(Float.toString(calculadora.somar()));
+        }catch(NumberFormatException ex){
+            JOptionPane.showMessageDialog(null, "Valores inválidos!" ,"Erro",JOptionPane.ERROR_MESSAGE);
+            }
+             
     }//GEN-LAST:event_BotaoSomarActionPerformed
 
     private void BotaoSubtrairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoSubtrairActionPerformed
+        try{
         calculadora.x = Float.parseFloat(CampoNumero1.getText());
         calculadora.y = Float.parseFloat(CampoNumero2.getText());
         CampoResultado.setText(Float.toString(calculadora.subtrair()));
+        }catch(NumberFormatException ex){
+            JOptionPane.showMessageDialog(null, "Valores inválidos!" ,"Erro",JOptionPane.ERROR_MESSAGE);
+            }
     }//GEN-LAST:event_BotaoSubtrairActionPerformed
 
     private void BotaoDividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoDividirActionPerformed
@@ -180,15 +189,16 @@ public class CalculadoraBasicaTela extends javax.swing.JFrame {
         }catch(NumberFormatException ex){
             JOptionPane.showMessageDialog(null, "Valores inválidos!" ,"Erro",JOptionPane.ERROR_MESSAGE);
             }
-        
-        
-        
     }//GEN-LAST:event_BotaoDividirActionPerformed
 
     private void BotaoMultiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoMultiplicarActionPerformed
+        try{
         calculadora.x = Float.parseFloat(CampoNumero1.getText());
         calculadora.y = Float.parseFloat(CampoNumero2.getText());
         CampoResultado.setText(Float.toString(calculadora.multiplicar()));
+        }catch(NumberFormatException ex){
+            JOptionPane.showMessageDialog(null, "Valores inválidos!" ,"Erro",JOptionPane.ERROR_MESSAGE);
+            }
     }//GEN-LAST:event_BotaoMultiplicarActionPerformed
 
     private void BotaoLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoLimparActionPerformed
